@@ -1,12 +1,24 @@
 cmake_minimum_required(VERSION 3.12)
 project(p4est
-  LANGUAGES C
+  LANGUAGES C Fortran
   DESCRIPTION "Build and use p4est (autotools-based) from CMake projects"
   HOMEPAGE_URL https://github.com/cburstedde/p4est)
 
-# --- user parameters
+# Note: p4est is C only, but autotools requires a Fortran compiler to be present and working.
+
 set(P4EST_ROOT ${PROJECT_BINARY_DIR})
 set(p4est_src ${P4EST_ROOT}/src/p4est)
+
+# --- help autotools based on CMake variables
+if(NOT DEFINED ENV{CC})
+  set(ENV{CC} ${CMAKE_C_COMPILER})
+endif()
+if(NOT DEFINED ENV{FC})
+  set(ENV{FC} ${CMAKE_Fortran_COMPILER})
+endif()
+if(NOT DEFINED ENV{F77})
+  set(ENV{F77} ${CMAKE_Fortran_COMPILER})
+endif()
 
 # --- main program
 find_package(MPI COMPONENTS C)

@@ -13,13 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: brew install autoconf automake libtool
+    - run: brew install autoconf automake libtool lapack
 
     - run: cmake -B build
-      # autotools needs these full variables
-      env:
-        CC: /usr/local/bin/gcc-10
-        FC: /usr/local/bin/gfortran-10
-        F77: /usr/local/bin/gfortran-10
 
     - run: cmake --build build

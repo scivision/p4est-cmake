@@ -28,3 +28,11 @@ Binary artifacts (test exectuables) are created under "build/".
 * bin: test exectuables
 * include: *.h headers
 * lib: p4est, sc
+
+### Prereqs
+
+MacOS: assuming Homebrew is used:
+
+```sh
+brew install gcc cmake make openmpi autoconf automake libtool lapack
+```
