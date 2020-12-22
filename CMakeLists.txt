@@ -11,7 +11,7 @@ set(p4est_src ${P4EST_ROOT}/src/p4est)
 # --- main program
 find_package(MPI COMPONENTS C)
 
-set(p4est_flags "--prefix=${P4EST_ROOT}")
+set(p4est_flags --prefix=${P4EST_ROOT})
 if(MPI_C_FOUND)
   string(APPEND p4est_flags " --enable-mpi")
 endif()

@@ -5,7 +5,7 @@
 Building [p4est](https://github.com/cburstedde/p4est) as a CMake ExternalProject for easier use in CMake projects in an OS-agnostic manner.
 
 The CMake script runs `bootstrap`, `configure`, `make`, `make install`, `make check`.
-On a desktop or good laptop PC it takes about 5 minutes to build and test.
+On a good desktop PC it takes about 2 minutes to build and test p4est.
 
 ## Usage
 

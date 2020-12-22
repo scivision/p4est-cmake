@@ -16,3 +16,11 @@ jobs:
 
     - run: cmake -B build
     - run: cmake --build build
+
+  mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: cmake -B build
+    - run: cmake --build build
