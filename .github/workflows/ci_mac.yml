@@ -16,8 +16,9 @@ jobs:
     - run: brew install autoconf automake libtool
 
     - run: cmake -B build
+      # autotools needs these full variables
       env:
-        CC: gcc-10
-        FC: gfortran-10
+        CC: /usr/local/bin/gcc-10
+        FC: /usr/local/bin/gfortran-10
 
     - run: cmake --build build
