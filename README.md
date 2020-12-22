@@ -2,7 +2,8 @@
 
 ![ci](https://github.com/scivision/p4est-cmake/workflows/ci/badge.svg)
 
-Building [p4est](https://github.com/cburstedde/p4est) as a CMake ExternalProject for easier use in CMake projects in an OS-agnostic manner.
+Building [p4est](https://github.com/cburstedde/p4est) as a CMake ExternalProject for easier use in CMake projects on Linux and MacOS.
+Windows has platform-specific issues, so it is probably easier to use p4est via Windows Subsystem for Linux.
 
 The CMake script runs `bootstrap`, `configure`, `make`, `make install`, `make check`.
 On a good desktop PC it takes about 2 minutes to build and test p4est.
