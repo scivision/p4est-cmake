@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
+
+include(cmake/compiler_find.cmake)
+
 project(p4est
   LANGUAGES C Fortran
   DESCRIPTION "Build and use p4est (autotools-based) from CMake projects"
@@ -20,12 +23,12 @@ if(NOT DEFINED ENV{F77})
   set(ENV{F77} ${CMAKE_Fortran_COMPILER})
 endif()
 
-# --- main program
 find_package(MPI COMPONENTS C)
 
-set(p4est_flags --prefix=${P4EST_ROOT})
+set(p4est_flags --without-blas --prefix=${P4EST_ROOT})
+set(p4est_mpi)
 if(MPI_C_FOUND)
-  string(APPEND p4est_flags " --enable-mpi")
+  set(p4est_mpi --enable-mpi)
 endif()
 
 cmake_host_system_information(RESULT Ncpu QUERY NUMBER_OF_PHYSICAL_CORES)
@@ -39,7 +42,7 @@ GIT_TAG v2.2
 GIT_SHALLOW true
 UPDATE_DISCONNECTED true
 PREFIX ${P4EST_ROOT}
-CONFIGURE_COMMAND ${p4est_src}/configure ${p4est_flags}
+CONFIGURE_COMMAND ${p4est_src}/configure ${p4est_flags} ${p4est_mpi}
 BUILD_COMMAND make -j${Ncpu}
 INSTALL_COMMAND make -j${Ncpu} install
 TEST_COMMAND make check

@@ -34,5 +34,5 @@ Binary artifacts (test exectuables) are created under "build/".
 MacOS: assuming Homebrew is used:
 
 ```sh
-brew install gcc cmake make openmpi autoconf automake libtool lapack
+brew install gcc cmake make openmpi autoconf automake libtool
 ```
