@@ -1,6 +1,7 @@
 # p4est-cmake
 
 ![ci](https://github.com/scivision/p4est-cmake/workflows/ci/badge.svg)
+![ci_mac](https://github.com/scivision/p4est-cmake/workflows/ci_mac/badge.svg)
 
 Building [p4est](https://github.com/cburstedde/p4est) as a CMake ExternalProject for easier use in CMake projects on Linux and MacOS.
 Windows has platform-specific issues, so it is probably easier to use p4est via Windows Subsystem for Linux.

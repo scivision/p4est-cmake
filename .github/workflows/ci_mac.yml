@@ -1,0 +1,23 @@
+name: ci_mac
+
+on:
+  push:
+    paths:
+      - "**/CMakeLists.txt"
+      - ".github/workflows/ci_mac.yml"
+
+jobs:
+
+  mac:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - run: brew install autoconf automake libtool
+
+    - run: cmake -B build
+      env:
+        CC: gcc-10
+        FC: gfortran-10
+
+    - run: cmake --build build

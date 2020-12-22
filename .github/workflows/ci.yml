@@ -16,18 +16,3 @@ jobs:
 
     - run: cmake -B build
     - run: cmake --build build
-
-  mac:
-    needs: linux
-    runs-on: macos-latest
-    steps:
-    - uses: actions/checkout@v2
-
-    - run: brew install autoconf automake libtool
-
-    - run: cmake -B build
-      env:
-        CC: gcc-10
-        FC: gfortran-10
-
-    - run: cmake --build build
