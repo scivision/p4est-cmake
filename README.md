@@ -15,8 +15,15 @@ As with most CMake projects:
 
 ```sh
 cmake -B build
+cmake --build build
+```
 
-cmake --build build --parallel
+Since we use the "prev3-develop" branch, there may be bugs in testing code on MacOS.
+The tests can be disabled by:
+
+```sh
+cmake -B build -DBUILD_TESTING:BOOL=false
+cmake --build build
 ```
 
 Since this project consumes p4est as an [ExternalProject](https://cmake.org/cmake/help/latest/module/ExternalProject.html), p4est is downloaded, built, and tested on the "cmake --build" command.
