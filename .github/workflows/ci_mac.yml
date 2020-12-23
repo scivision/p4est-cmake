@@ -15,6 +15,6 @@ jobs:
 
     - run: brew install autoconf automake libtool
 
-    - run: cmake -B build
+    - run: cmake -B build --log-level=VERBOSE
 
     - run: cmake --build build

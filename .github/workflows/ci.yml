@@ -14,5 +14,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - run: cmake -B build
+    - run: cmake -B build --log-level=VERBOSE
+
     - run: cmake --build build
