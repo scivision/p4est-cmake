@@ -28,9 +28,21 @@ Binary artifacts (test executables) are created under "build/".
 * include: *.h headers
 * lib: p4est, sc
 
-### Prereqs
+## Prereqs
 
-MacOS: assuming Homebrew is used:
+p4est needs a few libraries and programs to build.
+
+### Linux
+
+The names of these packages vary slightly depending on Linux distro. On Ubuntu:
+
+```sh
+apt install gcc cmake make libopenmpi-dev autoconf automake libtool-bin
+```
+
+### MacOS
+
+assuming Homebrew is used:
 
 ```sh
 brew install gcc cmake make openmpi autoconf automake libtool

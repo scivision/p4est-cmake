@@ -15,6 +15,11 @@ option(P4EST_BUILD_TESTING "p4est self tests" OFF)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules)
 
+find_package(Autotools)
+if(NOT Autotools_FOUND)
+  message(FATAL_ERROR "Please install Autotools--see the Readme docs")
+endif()
+
 find_package(MPI COMPONENTS C)
 
 if(NOT p4est_external)
