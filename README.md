@@ -6,8 +6,8 @@
 Building [p4est](https://github.com/cburstedde/p4est) as a CMake ExternalProject for easier use in CMake projects on Linux and MacOS.
 Windows has platform-specific issues, so it is probably easier to use p4est via Windows Subsystem for Linux.
 
-The CMake script runs `bootstrap`, `configure`, `make`, `make install`, `make check`.
-On a good desktop PC it takes about 2 minutes to build and test p4est.
+The CMake script runs `bootstrap`, `configure`, `make`, `make install`.
+On a good desktop PC it takes about 2 minutes to build p4est.
 
 ## Usage
 
@@ -15,14 +15,6 @@ As with most CMake projects:
 
 ```sh
 cmake -B build
-cmake --build build
-```
-
-Since we use the "prev3-develop" branch, there may be bugs in testing code on MacOS.
-The tests can be disabled by:
-
-```sh
-cmake -B build -DBUILD_TESTING:BOOL=false
 cmake --build build
 ```
 
