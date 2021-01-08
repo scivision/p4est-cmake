@@ -37,7 +37,7 @@ p4est needs a few libraries and programs to build.
 The names of these packages vary slightly depending on Linux distro. On Ubuntu:
 
 ```sh
-apt install gcc cmake make libopenmpi-dev autoconf automake
+apt install gcc cmake make libopenmpi-dev autoconf automake libtool
 ```
 
 ### MacOS

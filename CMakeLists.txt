@@ -32,5 +32,10 @@ endif()
 # --- user programs
 
 add_executable(hello hello.c)
-target_link_libraries(hello PRIVATE p4est::p4est MPI::MPI_C)
-add_test(NAME p4est:hello COMMAND ${MPIEXEC_EXECUTABLE} ${MPIEXEC_NUMPROC_FLAG} ${MPIEXEC_MAX_NUMPROCS} $<TARGET_FILE:hello>)
+target_link_libraries(hello PRIVATE p4est::p4est)
+if(MPI_C_FOUND)
+  target_link_libraries(hello PRIVATE MPI::MPI_C)
+  add_test(NAME p4est:hello COMMAND ${MPIEXEC_EXECUTABLE} ${MPIEXEC_NUMPROC_FLAG} ${MPIEXEC_MAX_NUMPROCS} $<TARGET_FILE:hello>)
+else(MPI_C_FOUND)
+  add_test(NAME p4est:hello COMMAND $<TARGET_FILE:hello>)
+endif(MPI_C_FOUND)
