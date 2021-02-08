@@ -1,3 +1,5 @@
+ARCHIVED because p4est itself now has CMake.
+
 # p4est-cmake
 
 ![ci](https://github.com/scivision/p4est-cmake/workflows/ci/badge.svg)
